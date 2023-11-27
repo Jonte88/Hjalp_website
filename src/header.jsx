@@ -16,7 +16,6 @@ function App() {
           <img src={placeholder_person} alt="Person photo" />
         </div>
       </header>
-      <div></div>
     </>
   );
 }
