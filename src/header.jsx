@@ -9,8 +9,8 @@ function App() {
     <>
       <header>
         <div className="leftNavDiv">
-          <div className="leftNavDivUp">NTI Gymnasiet</div>
-          <div className="leftNavDivDown">Personal</div>
+          <div className="leftNavDivUp"><h1>NTI Gymnasiet</h1></div>
+          <div className="leftNavDivDown"><h2>Personal</h2></div>
         </div>
         <div className="rightNavDiv">
           <img src={placeholder_person} alt="Person photo" />
