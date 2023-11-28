@@ -1,15 +1,31 @@
-import { useState } from "react";
-import "./App.css";
-import Header from "./header";
+// Hjalp_website/src/App.js
+
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    // Make a GET request to the server API
+    axios.get('http://localhost:3000/api/users')
+      .then(response => {
+        setUsers(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   return (
-    <>
-      <Header />
-      <div></div>
-    </>
+    <div>
+      <h1>User List</h1>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>{user.username} - {user.email}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
